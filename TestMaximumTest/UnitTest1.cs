@@ -39,5 +39,22 @@ namespace TestMaximumTest
             double result = Program.maximumFloatNumber(first, second, third);
             Assert.AreEqual(result, expected);
         }
+
+        /// <summary>
+        /// TC 3.1 - 3.3 :Tests the maximum string number.
+        /// </summary>
+        /// <param name="first">The first.</param>
+        /// <param name="second">The second.</param>
+        /// <param name="third">The third.</param>
+        [TestMethod]
+        [DataRow("PEACH", "APPLE", "BANANA")]
+        [DataRow("APPLE", "PEACH", "BANANA")]
+        [DataRow("APPLE", "BANANA", "PEACH")]
+        public void TestMaximumStringNumber(string first, string second, string third)
+        {
+            string expected = "PEACH";
+            string result = Program.maximumStringNumber(first, second, third);
+            Assert.AreEqual(result, expected);
+        }
     }
 }
