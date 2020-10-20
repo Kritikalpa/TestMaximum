@@ -7,8 +7,11 @@ namespace TestMaximumTest
     public class UnitTest1
     {
         /// <summary>
-        /// TC 1.1-1.3 : Tests the maximum integer number.
+        /// TC 1.1-1.3 :Tests the maximum integer number.
         /// </summary>
+        /// <param name="first">The first.</param>
+        /// <param name="second">The second.</param>
+        /// <param name="third">The third.</param>
         [TestMethod]
         [DataRow(44,33,22)]
         [DataRow(33,44,22)]
@@ -17,6 +20,23 @@ namespace TestMaximumTest
         {
             int expected = 44;
             int result = Program.maximumIntegerNumber(first, second, third);
+            Assert.AreEqual(result, expected);
+        }
+
+        /// <summary>
+        /// TC 2.1-2.3 :Tests the maximum float number.
+        /// </summary>
+        /// <param name="first">The first.</param>
+        /// <param name="second">The second.</param>
+        /// <param name="third">The third.</param>
+        [TestMethod]
+        [DataRow(3.3, 2.2, 1.1)]
+        [DataRow(2.2, 3.3, 1.1)]
+        [DataRow(1.1, 2.2, 3.3)]
+        public void TestMaximumFloatNumber(double first, double second, double third)
+        {
+            double expected = 3.3;
+            double result = Program.maximumFloatNumber(first, second, third);
             Assert.AreEqual(result, expected);
         }
     }
