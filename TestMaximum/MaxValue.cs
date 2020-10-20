@@ -6,24 +6,17 @@ namespace TestMaximum
 {
     public class MaxValue<T> where T : IComparable
     {
-        public T first, second, third;
+        public T[] values;
 
-        public MaxValue(T first, T second, T third)
+        public MaxValue(T[] inputArray)
         {
-            this.first = first;
-            this.second = second;
-            this.third = third;
+            this.values = inputArray;
         }
 
         public T MaximumValue()
         {
-            if (first.CompareTo(second) >= 0 && first.CompareTo(third) >= 0)
-                return first;
-
-            else if (second.CompareTo(first) >= 0 && second.CompareTo(third) >= 0)
-                return second;
-            else
-                return third;
+            Array.Sort(this.values);
+            return this.values[^1];
         }
     }
 }
