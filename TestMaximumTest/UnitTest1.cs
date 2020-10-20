@@ -18,8 +18,9 @@ namespace TestMaximumTest
         [DataRow(22,33,44)]
         public void TestMaximumIntegerNumber(int first, int second, int third)
         {
+            MaxValue<int> intObj = new MaxValue<int>(first, second, third);
             int expected = 44;
-            int result = Program.MaximumValue<int>(first, second, third);
+            int result = intObj.MaximumValue();
             Assert.AreEqual(result, expected);
         }
 
@@ -35,8 +36,9 @@ namespace TestMaximumTest
         [DataRow(1.1, 2.2, 3.3)]
         public void TestMaximumFloatNumber(double first, double second, double third)
         {
+            MaxValue<double> floatObj = new MaxValue<double>(first, second, third);
             double expected = 3.3;
-            double result = Program.MaximumValue<double>(first, second, third);
+            double result = floatObj.MaximumValue();
             Assert.AreEqual(result, expected);
         }
 
@@ -52,8 +54,9 @@ namespace TestMaximumTest
         [DataRow("APPLE", "BANANA", "PEACH")]
         public void TestMaximumStringNumber(string first, string second, string third)
         {
+            MaxValue<string> stringObj = new MaxValue<string>(first, second, third);
             string expected = "PEACH";
-            string result = Program.MaximumValue<string>(first, second, third);
+            string result = stringObj.MaximumValue();
             Assert.AreEqual(result, expected);
         }
     }
