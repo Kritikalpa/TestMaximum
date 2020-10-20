@@ -19,7 +19,7 @@ namespace TestMaximumTest
         public void TestMaximumIntegerNumber(int first, int second, int third)
         {
             int expected = 44;
-            int result = Program.maximumIntegerNumber(first, second, third);
+            int result = Program.MaximumValue<int>(first, second, third);
             Assert.AreEqual(result, expected);
         }
 
@@ -36,7 +36,7 @@ namespace TestMaximumTest
         public void TestMaximumFloatNumber(double first, double second, double third)
         {
             double expected = 3.3;
-            double result = Program.maximumFloatNumber(first, second, third);
+            double result = Program.MaximumValue<double>(first, second, third);
             Assert.AreEqual(result, expected);
         }
 
@@ -53,7 +53,7 @@ namespace TestMaximumTest
         public void TestMaximumStringNumber(string first, string second, string third)
         {
             string expected = "PEACH";
-            string result = Program.maximumStringNumber(first, second, third);
+            string result = Program.MaximumValue<string>(first, second, third);
             Assert.AreEqual(result, expected);
         }
     }
